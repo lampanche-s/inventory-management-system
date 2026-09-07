@@ -1,0 +1,11 @@
+ALTER TABLE itens VALIDATE CONSTRAINT ck_itens_quantidade_atual_nao_negativa;
+ALTER TABLE itens VALIDATE CONSTRAINT ck_itens_estoque_minimo_nao_negativo;
+ALTER TABLE itens VALIDATE CONSTRAINT ck_itens_preco_medio_nao_negativo;
+ALTER TABLE itens VALIDATE CONSTRAINT ck_itens_dias_aviso_validade_intervalo;
+ALTER TABLE fornecedores VALIDATE CONSTRAINT ck_fornecedores_score_intervalo;
+ALTER TABLE movimentacoes_estoque VALIDATE CONSTRAINT ck_movimentacoes_quantidade_positiva;
+ALTER TABLE movimentacoes_estoque VALIDATE CONSTRAINT ck_movimentacoes_saldo_anterior_nao_negativo;
+ALTER TABLE movimentacoes_estoque VALIDATE CONSTRAINT ck_movimentacoes_saldo_posterior_nao_negativo;
+ALTER TABLE solicitacoes_movimentacao VALIDATE CONSTRAINT ck_solicitacoes_quantidade_positiva;
+ALTER TABLE solicitacoes_movimentacao VALIDATE CONSTRAINT ck_solicitacoes_ordem_positiva;
+ALTER TABLE estoque_valor_historico VALIDATE CONSTRAINT ck_estoque_valor_historico_nao_negativo;

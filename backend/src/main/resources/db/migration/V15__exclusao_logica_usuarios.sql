@@ -1,0 +1,7 @@
+ALTER TABLE usuarios
+ADD COLUMN IF NOT EXISTS excluido BOOLEAN NOT NULL DEFAULT FALSE;
+
+ALTER TABLE usuarios
+ADD COLUMN IF NOT EXISTS deleted_at TIMESTAMP NULL;
+
+CREATE INDEX IF NOT EXISTS idx_usuarios_excluido ON usuarios(excluido);

@@ -1,0 +1,718 @@
+:root {
+  color-scheme: light;
+
+  --app-bg: #ffffff;
+  --app-panel: #ffffff;
+  --app-text: #000000;
+  --app-muted: #324964;
+  --app-blue: #004cc2;
+  --app-blue-dark: #003f9e;
+  --app-red: #c9001f;
+  --app-warning: #b45700;
+  --app-success: #006f36;
+  --app-border: #d7e1ef;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  min-width: 320px;
+  min-height: 100%;
+  background: var(--app-bg);
+  scroll-behavior: smooth;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 0;
+  overflow-x: hidden;
+  background: var(--app-bg);
+  color: var(--app-text);
+  font-family: "Inter", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  text-rendering: geometricPrecision;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+button:disabled {
+  cursor: not-allowed;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.text-action-link {
+  color: var(--color-nexus-bright);
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    color 150ms ease,
+    text-decoration-color 150ms ease;
+  text-decoration: underline;
+  text-decoration-color: transparent;
+  text-underline-offset: 4px;
+}
+
+.text-action-link:hover {
+  color: var(--color-nexus-blue);
+  text-decoration-color: currentColor;
+}
+
+::selection {
+  background: rgba(0, 79, 209, 0.18);
+  color: #000000;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+/* Mapping from the former theme tokens to the current light identity. */
+.text-white {
+  color: #000000 !important;
+}
+
+.text-slate-100,
+.text-slate-200,
+.text-slate-300 {
+  color: #102a4c !important;
+}
+
+.text-slate-400,
+.text-slate-500 {
+  color: #405875 !important;
+}
+
+.text-slate-600,
+.text-slate-700 {
+  color: #263c5c !important;
+}
+
+.text-nexus-muted {
+  color: #324964 !important;
+}
+
+/* Brand text and icons. */
+.text-nexus-bright,
+.text-blue-300,
+.text-blue-400,
+.text-blue-500,
+.text-blue-600 {
+  color: #004cc2 !important;
+}
+
+.text-red-300,
+.text-red-400,
+.text-red-500,
+.text-red-600 {
+  color: #c9001f !important;
+}
+
+.text-amber-300,
+.text-amber-400,
+.text-amber-500,
+.text-yellow-300,
+.text-yellow-400,
+.text-yellow-500 {
+  color: #b45700 !important;
+}
+
+.text-green-300,
+.text-green-400,
+.text-green-500,
+.text-emerald-300,
+.text-emerald-400,
+.text-emerald-500 {
+  color: #006f36 !important;
+}
+
+.text-indigo-300,
+.text-indigo-400,
+.text-indigo-500 {
+  color: #244286 !important;
+}
+
+/* Light surfaces. */
+.bg-nexus-panel,
+.bg-nexus-panel\/78,
+.bg-nexus-panel\/80,
+.bg-nexus-panel\/90,
+.bg-white {
+  background-color: #ffffff !important;
+}
+
+.bg-nexus-bg\/85 {
+  background-color: rgba(255, 255, 255, 0.96) !important;
+}
+
+.bg-white\/\[0\.03\],
+.bg-white\/\[0\.035\],
+.bg-white\/\[0\.04\],
+.bg-white\/\[0\.045\],
+.bg-white\/\[0\.05\],
+.bg-white\/\[0\.055\],
+.bg-white\/\[0\.06\],
+.bg-white\/\[0\.07\],
+.bg-white\/\[0\.075\],
+.bg-white\/\[0\.08\],
+.bg-white\/\[0\.1\] {
+  background-color: #f8fbff !important;
+}
+
+.hover\:bg-white\/10:hover,
+.hover\:bg-white\/\[0\.07\]:hover,
+.hover\:bg-white\/\[0\.08\]:hover,
+.hover\:bg-white\/\[0\.1\]:hover {
+  background-color: #eef5ff !important;
+}
+
+/* Bordas, sombras e arredondamento. */
+.border-nexus-border {
+  border-color: #d7e1ef !important;
+}
+
+.shadow-premium {
+  box-shadow:
+    0 1px 2px rgba(15, 23, 42, 0.04),
+    0 10px 24px rgba(0, 43, 102, 0.07) !important;
+}
+
+.shadow-soft {
+  box-shadow:
+    0 1px 2px rgba(15, 23, 42, 0.035),
+    0 8px 18px rgba(0, 43, 102, 0.055) !important;
+}
+
+.rounded-\[1\.75rem\],
+.rounded-\[2rem\],
+.rounded-3xl {
+  border-radius: 1rem !important;
+}
+
+.rounded-\[1\.5rem\],
+.rounded-2xl {
+  border-radius: 0.85rem !important;
+}
+
+/* Campos e tabelas. */
+input,
+select,
+textarea {
+  color: #000000 !important;
+  background-color: #ffffff !important;
+  border-color: #b8c8df !important;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #6b7c93 !important;
+}
+
+select option {
+  background-color: #ffffff !important;
+  color: #000000 !important;
+}
+
+thead th,
+tbody td,
+table,
+thead,
+tbody,
+tr,
+td,
+th {
+  border-color: #e4ebf5 !important;
+}
+
+thead th {
+  color: #354761 !important;
+}
+
+tbody td {
+  color: #000000 !important;
+}
+
+/* Primary buttons and brand blocks. */
+.bg-nexus-bright,
+button.bg-nexus-bright,
+a.bg-nexus-bright {
+  background-color: #004cc2 !important;
+  color: #ffffff !important;
+}
+
+.bg-nexus-bright *,
+button.bg-nexus-bright *,
+a.bg-nexus-bright * {
+  color: #ffffff !important;
+}
+
+button.bg-nexus-bright:hover,
+a.bg-nexus-bright:hover {
+  background-color: #003f9e !important;
+}
+
+.bg-nexus-danger,
+button.bg-nexus-danger,
+a.bg-nexus-danger,
+button.bg-red-500,
+.bg-red-500 {
+  background-color: #c9001f !important;
+  color: #ffffff !important;
+}
+
+.bg-nexus-danger *,
+button.bg-nexus-danger *,
+a.bg-nexus-danger *,
+button.bg-red-500 *,
+.bg-red-500 * {
+  color: #ffffff !important;
+}
+
+button.bg-nexus-danger:hover,
+a.bg-nexus-danger:hover,
+button.bg-red-500:hover {
+  background-color: #b8001c !important;
+}
+
+.bg-nexus-blue {
+  background-color: #003f9e !important;
+}
+
+.bg-nexus-bright {
+  background-color: #004cc2 !important;
+}
+
+.bg-nexus-danger {
+  background-color: #c9001f !important;
+}
+
+/* Solid colour backgrounds with white content. */
+.bg-blue-500\/10,
+.bg-blue-500\/15,
+.bg-blue-400\/10,
+.bg-blue-400\/15 {
+  background-color: #004cc2 !important;
+  color: #ffffff !important;
+  border-color: rgba(0, 87, 216, 0.52) !important;
+}
+
+.bg-red-500\/10,
+.bg-red-500\/15,
+.bg-red-400\/10,
+.bg-red-400\/15 {
+  background-color: #c9001f !important;
+  color: #ffffff !important;
+  border-color: rgba(224, 0, 34, 0.52) !important;
+}
+
+.bg-amber-500\/10,
+.bg-amber-500\/15,
+.bg-amber-400\/10,
+.bg-amber-400\/15,
+.bg-yellow-500\/10,
+.bg-yellow-500\/15,
+.bg-yellow-400\/10,
+.bg-yellow-400\/15 {
+  background-color: #b45700 !important;
+  color: #ffffff !important;
+  border-color: rgba(217, 107, 0, 0.52) !important;
+}
+
+.bg-green-500\/10,
+.bg-green-500\/15,
+.bg-green-400\/10,
+.bg-green-400\/15,
+.bg-emerald-500\/10,
+.bg-emerald-500\/15,
+.bg-emerald-400\/10,
+.bg-emerald-400\/15 {
+  background-color: #006f36 !important;
+  color: #ffffff !important;
+  border-color: rgba(0, 143, 69, 0.52) !important;
+}
+
+.bg-indigo-500\/10,
+.bg-indigo-500\/15,
+.bg-indigo-400\/10,
+.bg-indigo-400\/15 {
+  background-color: #244286 !important;
+  color: #ffffff !important;
+  border-color: rgba(40, 75, 155, 0.52) !important;
+}
+
+.bg-blue-500\/10 *,
+.bg-blue-500\/15 *,
+.bg-blue-400\/10 *,
+.bg-blue-400\/15 *,
+.bg-red-500\/10 *,
+.bg-red-500\/15 *,
+.bg-red-400\/10 *,
+.bg-red-400\/15 *,
+.bg-amber-500\/10 *,
+.bg-amber-500\/15 *,
+.bg-amber-400\/10 *,
+.bg-amber-400\/15 *,
+.bg-yellow-500\/10 *,
+.bg-yellow-500\/15 *,
+.bg-yellow-400\/10 *,
+.bg-yellow-400\/15 *,
+.bg-green-500\/10 *,
+.bg-green-500\/15 *,
+.bg-green-400\/10 *,
+.bg-green-400\/15 *,
+.bg-emerald-500\/10 *,
+.bg-emerald-500\/15 *,
+.bg-emerald-400\/10 *,
+.bg-emerald-400\/15 *,
+.bg-indigo-500\/10 *,
+.bg-indigo-500\/15 *,
+.bg-indigo-400\/10 *,
+.bg-indigo-400\/15 * {
+  color: #ffffff !important;
+}
+
+/* Subtle hover for solid colour blocks. */
+.bg-blue-500\/10,
+.bg-blue-500\/15,
+.bg-blue-400\/10,
+.bg-blue-400\/15,
+.bg-red-500\/10,
+.bg-red-500\/15,
+.bg-red-400\/10,
+.bg-red-400\/15,
+.bg-amber-500\/10,
+.bg-amber-500\/15,
+.bg-amber-400\/10,
+.bg-amber-400\/15,
+.bg-yellow-500\/10,
+.bg-yellow-500\/15,
+.bg-yellow-400\/10,
+.bg-yellow-400\/15,
+.bg-green-500\/10,
+.bg-green-500\/15,
+.bg-green-400\/10,
+.bg-emerald-500\/10,
+.bg-emerald-500\/15,
+.bg-indigo-500\/10,
+.bg-indigo-500\/15 {
+  transition:
+    background-color 150ms ease,
+    filter 150ms ease,
+    box-shadow 150ms ease,
+    border-color 150ms ease !important;
+}
+
+.bg-blue-500\/10:hover,
+.bg-blue-500\/15:hover,
+.bg-blue-400\/10:hover,
+.bg-blue-400\/15:hover {
+  background-color: #003f9e !important;
+  filter: brightness(0.96);
+}
+
+.bg-red-500\/10:hover,
+.bg-red-500\/15:hover,
+.bg-red-400\/10:hover,
+.bg-red-400\/15:hover {
+  background-color: #c9001f !important;
+  filter: brightness(0.96);
+}
+
+.bg-amber-500\/10:hover,
+.bg-amber-500\/15:hover,
+.bg-amber-400\/10:hover,
+.bg-amber-400\/15:hover,
+.bg-yellow-500\/10:hover,
+.bg-yellow-500\/15:hover,
+.bg-yellow-400\/10:hover,
+.bg-yellow-400\/15:hover {
+  background-color: #b45700 !important;
+  filter: brightness(0.96);
+}
+
+.bg-green-500\/10:hover,
+.bg-green-500\/15:hover,
+.bg-green-400\/10:hover,
+.bg-emerald-500\/10:hover,
+.bg-emerald-500\/15:hover {
+  background-color: #006f36 !important;
+  filter: brightness(0.96);
+}
+
+.bg-indigo-500\/10:hover,
+.bg-indigo-500\/15:hover {
+  background-color: #1f3a7f !important;
+  filter: brightness(0.96);
+}
+
+/* Bordas institucionais. */
+.border-blue-400\/30,
+.border-blue-500\/20,
+.border-blue-500\/25 {
+  border-color: rgba(0, 87, 216, 0.42) !important;
+}
+
+.border-red-400\/20,
+.border-red-500\/20,
+.border-red-500\/25 {
+  border-color: rgba(224, 0, 34, 0.34) !important;
+}
+
+.border-amber-500\/20,
+.border-amber-500\/25 {
+  border-color: rgba(217, 107, 0, 0.34) !important;
+}
+
+.border-green-500\/20,
+.border-green-500\/25 {
+  border-color: rgba(0, 143, 69, 0.32) !important;
+}
+
+/* Sidebar final */
+.sidebar-nav-heading {
+  font-family: inherit;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+.sidebar-nav-item {
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+.sidebar-mobile-scroll {
+  scrollbar-width: none;
+}
+
+.sidebar-mobile-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+/* Sidebar panels use a self-contained light treatment. */
+.desktop-sidebar-panel,
+.mobile-sidebar-panel {
+  background-color: #ffffff !important;
+  border-color: var(--app-border) !important;
+}
+
+.desktop-sidebar-panel .sidebar-nav-heading,
+.mobile-sidebar-panel .sidebar-nav-heading {
+  color: #60758f !important;
+}
+
+.desktop-sidebar-panel a:not([aria-current="page"]),
+.mobile-sidebar-panel a:not([aria-current="page"]) {
+  color: #64748b !important;
+}
+
+.desktop-sidebar-panel a:not([aria-current="page"]) svg,
+.mobile-sidebar-panel a:not([aria-current="page"]) svg {
+  color: #64748b !important;
+}
+
+.desktop-sidebar-panel a:not([aria-current="page"]):hover,
+.mobile-sidebar-panel a:not([aria-current="page"]):hover {
+  background-color: rgba(0, 76, 194, 0.08) !important;
+  color: #475569 !important;
+}
+
+.desktop-sidebar-panel a:not([aria-current="page"]):hover svg,
+.mobile-sidebar-panel a:not([aria-current="page"]):hover svg {
+  color: #475569 !important;
+}
+
+.desktop-sidebar-panel a[aria-current="page"],
+.desktop-sidebar-panel a[aria-current="page"]:hover,
+.mobile-sidebar-panel a[aria-current="page"],
+.mobile-sidebar-panel a[aria-current="page"]:hover {
+  background-color: #004cc2 !important;
+  background-image: none !important;
+  color: #ffffff !important;
+  box-shadow: none !important;
+  filter: none;
+}
+
+.desktop-sidebar-panel a[aria-current="page"] svg,
+.desktop-sidebar-panel a[aria-current="page"]:hover svg,
+.mobile-sidebar-panel a[aria-current="page"] svg,
+.mobile-sidebar-panel a[aria-current="page"]:hover svg,
+.desktop-sidebar-panel a[aria-current="page"] span,
+.desktop-sidebar-panel a[aria-current="page"]:hover span,
+.mobile-sidebar-panel a[aria-current="page"] span,
+.mobile-sidebar-panel a[aria-current="page"]:hover span {
+  color: #ffffff !important;
+}
+
+.desktop-sidebar-panel footer,
+.mobile-sidebar-panel footer {
+  background-color: #ffffff !important;
+  border-color: var(--app-border) !important;
+}
+
+.desktop-sidebar-panel footer > div > p:not(.sidebar-nav-heading),
+.mobile-sidebar-panel footer > div > p:not(.sidebar-nav-heading) {
+  color: var(--app-text) !important;
+}
+
+.sidebar-toggle-button {
+  color: var(--app-blue) !important;
+  background-color: transparent;
+}
+
+.sidebar-toggle-button:hover {
+  color: var(--app-blue) !important;
+  background-color: rgba(0, 76, 194, 0.08) !important;
+}
+
+.desktop-sidebar-panel .sidebar-signout,
+.mobile-sidebar-panel .sidebar-signout {
+  color: var(--app-text) !important;
+  background-color: #ffffff !important;
+  border-color: var(--app-border) !important;
+}
+
+.desktop-sidebar-panel .sidebar-signout svg,
+.mobile-sidebar-panel .sidebar-signout svg {
+  color: var(--app-text) !important;
+}
+
+.desktop-sidebar-panel .sidebar-signout:hover,
+.mobile-sidebar-panel .sidebar-signout:hover {
+  color: var(--app-red) !important;
+  background-color: rgba(201, 0, 31, 0.08) !important;
+  border-color: rgba(201, 0, 31, 0.32) !important;
+}
+
+.desktop-sidebar-panel .sidebar-signout:hover svg,
+.mobile-sidebar-panel .sidebar-signout:hover svg {
+  color: var(--app-red) !important;
+}
+
+button.dashboard-primary-flat {
+  box-shadow: none !important;
+}
+
+/* Dropdown customizado */
+.custom-select-dropdown [role="option"][aria-selected="true"] {
+  background-color: #004cc2 !important;
+  color: #ffffff !important;
+}
+
+.custom-select-dropdown [role="option"][aria-selected="true"] * {
+  color: #ffffff !important;
+}
+
+.custom-select-dropdown [role="option"][aria-selected="true"]:hover {
+  background-color: #003f9e !important;
+  color: #ffffff !important;
+}
+
+/* Notification panel */
+.notification-filter-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(83, 101, 125, 0.42) transparent;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+}
+
+.notification-filter-scroll::-webkit-scrollbar {
+  height: 6px;
+}
+
+.notification-filter-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.notification-filter-scroll::-webkit-scrollbar-thumb {
+  background: rgba(83, 101, 125, 0.38);
+  border-radius: 999px;
+}
+
+.notification-filter-scroll::-webkit-scrollbar-thumb:hover {
+  background: rgba(83, 101, 125, 0.58);
+}
+
+.notification-filter-scroll > button {
+  flex: 0 0 auto;
+}
+
+/* No celular, o painel vira um sheet claro e controlado dentro da tela. */
+@media (max-width: 639px) {
+  .notification-panel {
+    position: fixed !important;
+    left: 12px !important;
+    right: 12px !important;
+    top: 96px !important;
+    width: auto !important;
+    max-height: calc(100dvh - 112px) !important;
+    border-radius: 12px !important;
+    background: #ffffff !important;
+    box-shadow: 0 24px 80px rgba(15, 23, 42, 0.28) !important;
+    z-index: 999 !important;
+  }
+
+  .notification-panel-header {
+    border-color: #d7e1ef !important;
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+
+  .notification-panel-title,
+  .notification-card-title {
+    color: #001f4d !important;
+  }
+
+  .notification-panel-muted,
+  .notification-card-description,
+  .notification-card-date {
+    color: #53657d !important;
+  }
+
+  .notification-filter-active {
+    color: #ffffff !important;
+    background: #004cc2 !important;
+    border-color: #004cc2 !important;
+  }
+
+  .notification-filter-inactive {
+    color: #53657d !important;
+    background: #f8fbff !important;
+    border-color: #d7e1ef !important;
+  }
+
+  .notification-filter-inactive:hover {
+    color: #001f4d !important;
+    background: #e3efff !important;
+  }
+
+  .notification-card {
+    border-color: #d7e1ef !important;
+    background: #f8fbff !important;
+    border-radius: 12px !important;
+  }
+
+  .notification-card:hover {
+    background: #e3efff !important;
+  }
+}

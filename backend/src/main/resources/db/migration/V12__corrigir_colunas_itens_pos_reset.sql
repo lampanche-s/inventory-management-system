@@ -1,0 +1,25 @@
+ALTER TABLE itens
+ADD COLUMN IF NOT EXISTS data_validade DATE;
+
+ALTER TABLE itens
+ADD COLUMN IF NOT EXISTS dias_aviso_validade INTEGER DEFAULT 30;
+
+UPDATE itens
+SET dias_aviso_validade = 30
+WHERE dias_aviso_validade IS NULL;
+
+ALTER TABLE itens
+ADD COLUMN IF NOT EXISTS imagem_url VARCHAR(500);
+
+ALTER TABLE itens
+ADD COLUMN IF NOT EXISTS localizacao VARCHAR(255);
+
+ALTER TABLE itens
+ADD COLUMN IF NOT EXISTS version BIGINT DEFAULT 0;
+
+UPDATE itens
+SET version = 0
+WHERE version IS NULL;
+
+ALTER TABLE itens
+ALTER COLUMN version SET NOT NULL;

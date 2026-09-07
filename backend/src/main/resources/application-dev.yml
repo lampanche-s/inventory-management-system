@@ -1,0 +1,23 @@
+spring:
+  config:
+    activate:
+      on-profile: dev
+  datasource:
+    url: ${DB_URL:jdbc:postgresql://localhost:5432/inventory_db}
+    username: ${DB_USERNAME:inventory_user}
+    password: ${DB_PASSWORD}
+
+app:
+  jwt:
+    secret: ${JWT_SECRET}
+    expiration-ms: ${JWT_EXPIRATION_MS:86400000}
+  dev-bootstrap:
+    username: ${DEV_ADMIN_USERNAME:}
+    password: ${DEV_ADMIN_PASSWORD:}
+    name: ${DEV_ADMIN_NAME:Local Administrator}
+    email: ${DEV_ADMIN_EMAIL:}
+
+logging:
+  level:
+    org.hibernate.SQL: ${DEV_HIBERNATE_SQL_LOG_LEVEL:ERROR}
+    org.hibernate.orm.jdbc.bind: ${DEV_HIBERNATE_BIND_LOG_LEVEL:ERROR}
